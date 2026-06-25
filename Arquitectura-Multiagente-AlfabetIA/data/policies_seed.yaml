@@ -1,0 +1,16 @@
+version: Pi0-2026-04
+review_uncertainty_threshold: 0.55
+uncertainty_review_threshold: 0.60
+code_review_confidence_threshold: 0.50
+model_confidence_review_threshold: 0.55
+fairness_channel_min_fraction: 0.10
+fairness_concern_threshold: 0.55
+fairness_review_threshold: 0.35
+fairness_block_threshold: 0.80
+minimum_models_for_segment_planning: 3
+route_score_review_threshold: 0.45
+allow_secondary_use_default: false
+allow_llm_coding: true
+m_curr_requires_human_approval: true
+raw_retention_days_default: 365
+export_requires_auditor_approval: true

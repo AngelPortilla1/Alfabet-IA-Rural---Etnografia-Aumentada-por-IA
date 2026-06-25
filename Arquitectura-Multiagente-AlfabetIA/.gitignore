@@ -1,0 +1,142 @@
+# =========================
+# Python
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+pip-wheel-metadata/
+
+# =========================
+# Virtual environments
+# =========================
+venv/
+.venv/
+env/
+ENV/
+
+# =========================
+# FastAPI / Uvicorn
+# =========================
+*.log
+uvicorn.log
+gunicorn.log
+
+# =========================
+# Environment variables
+# =========================
+.env
+.env.*
+!.env.example
+
+# =========================
+# Secrets / API keys
+# =========================
+secrets/
+credentials/
+*.pem
+*.key
+*.crt
+
+# =========================
+# Database
+# =========================
+*.db
+*.sqlite3
+
+# =========================
+# Testing
+# =========================
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+.tox/
+.nox/
+
+# =========================
+# Type checking / linting
+# =========================
+.mypy_cache/
+.pyre/
+.ruff_cache/
+.dmypy.json
+dmypy.json
+
+# =========================
+# Jupyter
+# =========================
+.ipynb_checkpoints/
+
+# =========================
+# IDEs / Editors
+# =========================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# =========================
+# OS files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Docker
+# =========================
+docker-compose.override.yml
+
+# =========================
+# Agent frameworks / AI
+# =========================
+.chromadb/
+qdrant_storage/
+weaviate_data/
+faiss_index/
+vectorstore/
+cache/
+tmp/
+temp/
+
+# LangChain
+.langchain.db
+
+# CrewAI / AutoGen / custom agents
+memory/
+sessions/
+artifacts/
+outputs/
+
+# =========================
+# Node (si usas frontend)
+# =========================
+node_modules/
+
+# =========================
+# Terraform / deployment
+# =========================
+.terraform/
+*.tfstate
+*.tfstate.*
+
+/examples
+/Scripts_test
+*.pdf
+/scratch

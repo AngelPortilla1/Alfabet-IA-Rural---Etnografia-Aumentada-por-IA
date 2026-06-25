@@ -1,0 +1,103 @@
+
+version: L0-2026-04
+methodological_status: seed_curriculum_to_be_codesigned
+domains:
+  C1: comprensión conceptual de IA, automatización, dato, modelo y recomendación
+  C2: datos, consentimiento, derechos, usos secundarios y gobernanza comunitaria
+  C3: interpretación crítica de recomendaciones algorítmicas
+  C4: decisión humano-en-el-bucle en contextos productivos
+  C5: sesgo, equidad, cobertura y justicia de datos
+  C6: experimentación local segura con herramientas digitales
+  C7: desconfianza, seguridad y soberanía tecnológica rural
+
+startup_routes:
+  A_normative:
+    tags: [data_governance, basic_concepts, human_review]
+    when: domina preocupación normativa, consentimiento o soberanía informacional
+  B_productive_cautious:
+    tags: [basic_concepts, ai_recommendations, human_review]
+    when: hay utilidad productiva con cautela y necesidad de contraste técnico
+  C_experimentation:
+    tags: [bias_fairness, experimentation, human_review]
+    when: grupo listo para probar con salvaguardas y evaluación de daño
+
+modules:
+  - module_id: MOD-C1-01
+    title: IA, dato, modelo y recomendación en agricultura
+    domain: C1
+    tags: [basic_concepts]
+    modality_audio: true
+    default_mediation: microtaller con tarjetas visuales
+    duration_minutes: 30
+    activity: construir ejemplos locales de dato, modelo y recomendación con tarjetas
+    assessment: explica oralmente qué puede y qué no puede hacer una herramienta de IA
+
+  - module_id: MOD-C2-01
+    title: Datos, consentimiento y derechos
+    domain: C2
+    tags: [data_governance]
+    modality_audio: true
+    default_mediation: deliberación comunitaria facilitada
+    duration_minutes: 35
+    activity: decidir qué datos compartir, con quién, para qué uso y bajo qué condición de revocación
+    assessment: identifica dato sensible, uso permitido, uso secundario y derecho de revocación
+
+  - module_id: MOD-C2-02
+    title: Gobernanza comunitaria de datos productivos
+    domain: C2
+    tags: [data_governance]
+    modality_audio: false
+    default_mediation: taller deliberativo con matriz de roles
+    duration_minutes: 50
+    activity: mapear roles de productor, facilitador, auditor y equipo curricular
+    assessment: propone una regla comunitaria para uso de datos y devolución de resultados
+
+  - module_id: MOD-C3-01
+    title: Cómo leer críticamente una recomendación de IA
+    domain: C3
+    tags: [ai_recommendations]
+    modality_audio: true
+    default_mediation: caso práctico con asesor técnico
+    duration_minutes: 40
+    activity: contrastar una recomendación de fertilización con datos del lote y criterio local
+    assessment: justifica acuerdo, revisión o rechazo de la recomendación
+
+  - module_id: MOD-C4-01
+    title: Cuándo aceptar, revisar o rechazar una recomendación
+    domain: C4
+    tags: [human_review, ai_recommendations]
+    modality_audio: true
+    default_mediation: role-play de decisión humano-en-el-bucle
+    duration_minutes: 45
+    activity: usar una matriz de decisión con evidencia, criterio humano, riesgo y reversibilidad
+    assessment: argumenta una decisión humano-en-el-bucle en lenguaje no técnico
+
+  - module_id: MOD-C5-01
+    title: Sesgo, cobertura y daño potencial
+    domain: C5
+    tags: [bias_fairness]
+    modality_audio: false
+    default_mediation: mapa colectivo de riesgos
+    duration_minutes: 40
+    activity: detectar quién podría quedar mal representado por canal, cultivo, edad o conectividad
+    assessment: identifica un posible daño y propone una salvaguarda
+
+  - module_id: MOD-C6-01
+    title: Experimentos pequeños y reversibles en campo
+    domain: C6
+    tags: [experimentation]
+    modality_audio: true
+    default_mediation: laboratorio vivo offline-first
+    duration_minutes: 45
+    activity: diseñar una prueba pequeña con bitácora, criterio de parada y devolución
+    assessment: presenta bitácora de prueba segura, reversible y documentada
+
+  - module_id: MOD-C7-NS-01
+    title: Por qué desconfío - Toma de decisiones y seguridad
+    domain: C7
+    tags: [digital_distrust, data_governance]
+    modality_audio: true
+    default_mediation: conversación facilitada con casos de la vereda
+    duration_minutes: 35
+    activity: identificar riesgos locales y proponer una medida de protección comunitaria
+    assessment: el participante expresa una duda legítima y reconoce su derecho a no usar la herramienta

@@ -1,0 +1,76 @@
+# ==============================================================================
+# GLOBAL .GITIGNORE - MONORREPO (FASTAPI BACKEND & VITE FRONTEND)
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# 1. ARCHIVOS GLOBALES (Sistema Operativo e IDEs)
+# ------------------------------------------------------------------------------
+.DS_Store
+Thumbs.db
+Desktop.ini
+.vscode/
+!.vscode/extensions.json
+.idea/
+*.suo
+*.swp
+*~
+*.log
+logs/
+
+# ------------------------------------------------------------------------------
+# 2. SEGURIDAD (¡CRÍTICO! Variables de Entorno)
+# ------------------------------------------------------------------------------
+.env
+.env.local
+.env.*.local
+*.env
+*.pem
+*.key
+*.cert
+*.secret
+credentials.json
+
+# Permitir explícitamente los archivos de ejemplo para guiar al equipo
+!.env.example
+
+# ------------------------------------------------------------------------------
+# 3. COMPONENTE BACKEND (FastAPI / Python)
+# ------------------------------------------------------------------------------
+# Entornos virtuales
+backend/venv/
+backend/.venv/
+backend/env/
+backend/ENV/
+
+# Caché y compilados de Python
+**/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+backend/.pytest_cache/
+backend/.mypy_cache/
+backend/.ruff_cache/
+
+# Bases de datos locales y almacenamiento de vectores (si aplica)
+backend/*.sqlite3
+backend/*.db
+backend/.chroma/
+
+# ------------------------------------------------------------------------------
+# 4. COMPONENTE FRONTEND (Vite / Node.js)
+# ------------------------------------------------------------------------------
+# Dependencias de Node
+frontend/node_modules/
+**/node_modules/
+
+# Carpetas de producción creadas por Vite (Build)
+frontend/dist/
+frontend/out-tsc/
+
+# Caché de empaquetadores y herramientas de Frontend
+frontend/.npm/
+frontend/.vite/
+frontend/.eslintcache
+
+*chat_thick_results.json
+*event_thick_results.json

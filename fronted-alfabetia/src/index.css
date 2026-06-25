@@ -1,0 +1,18 @@
+/* 1. Sintaxis de Tailwind v4 */
+@import "tailwindcss";
+
+/* 2. Le indicamos a Tailwind dónde están nuestros colores y fuentes */
+@config "../tailwind.config.js";
+
+@layer base {
+  body {
+    /* Forzamos los colores base. Quitamos font-body-md de aquí para evitar choques con v4 y lo usamos directo en CSS */
+    @apply bg-background text-on-background antialiased overflow-x-hidden;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+.topographic-bg {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" opacity="0.03"><path d="M0,50 Q100,10 200,50 T400,50" fill="none" stroke="%231b3022" stroke-width="1"/><path d="M0,100 Q100,60 200,100 T400,100" fill="none" stroke="%231b3022" stroke-width="1"/><path d="M0,150 Q100,110 200,150 T400,150" fill="none" stroke="%231b3022" stroke-width="1"/></svg>');
+  background-size: cover;
+}

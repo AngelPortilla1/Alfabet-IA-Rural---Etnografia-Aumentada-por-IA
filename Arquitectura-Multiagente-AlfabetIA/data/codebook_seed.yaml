@@ -1,0 +1,71 @@
+version: C0-2026-05
+methodological_status: seed_codebook_to_be_codesigned
+codes:
+  - code: basic_concepts
+    label: Conceptos básicos de IA y datos
+    keywords: ["qué es ia", "que es ia", "entender", "modelo", "automático", "algoritmo", "aprendo", "concepto"]
+    description: Necesidad de aclarar IA, dato, modelo, automatización y recomendación.
+
+  - code: data_governance
+    label: Datos, consentimiento y gobernanza
+    keywords: ["dato", "datos", "consentimiento", "compartir", "privacidad", "quién", "quien", "usa", "uso", "finca", "predio", "derechos", "revocar", "soberanía"]
+    description: Preocupación por control, permisos, uso secundario o sensibilidad de datos productivos.
+
+  - code: ai_recommendations
+    label: Recomendaciones de IA
+    keywords: ["recomienda", "recomendación", "recomendaciones", "fertilización", "riego", "plaga", "aplicación", "productiva", "comparar"]
+    description: Interés o cautela frente a recomendaciones algorítmicas en decisiones productivas.
+
+  - code: human_review
+    label: Revisión humana y mediación
+    keywords: ["técnico", "asesor", "facilitador", "persona", "humano", "revisar", "criterio", "acompañamiento", "confianza"]
+    description: Preferencia por decisión humano-en-el-bucle, asesoría técnica o mediación comunitaria.
+
+  - code: bias_fairness
+    label: Sesgo, cobertura y daño
+    keywords: ["sesgo", "daño", "excluye", "justicia", "algunos productores", "desigual", "cobertura", "representa mal"]
+    description: Preocupación por daño, discriminación, subrepresentación, brechas de canal o conectividad.
+
+  - code: experimentation
+    label: Prueba segura y reversible
+    keywords: ["probar", "experimento", "pequeño", "pequeña", "piloto", "ensayo", "reversible", "bitácora", "campo"]
+    description: Disposición a ensayar de manera gradual, documentada y reversible.
+
+  - code: digital_distrust
+    label: Desconfianza en sistemas digitales
+    keywords:
+      - no confío
+      - no me fío
+      - me roban
+      - no es seguro
+      - prefiero papel
+      - me da miedo
+      - pérdida de autonomía
+    description: >
+      Desconfianza por experiencias previas con fraudes o fallas de red en zonas rurales.
+
+  - code: empirical_knowledge
+    label: Saberes productivos empíricos
+    keywords:
+      - yo sé
+      - siempre he hecho
+      - mi abuelo
+      - tradición
+      - experiencia
+      - saber campesino
+      - a ojo
+    description: >
+      Reconocimiento del conocimiento tradicional como base para la alfabetización.
+
+  - code: connectivity_barrier
+    label: Barrera de conectividad o acceso
+    keywords:
+      - sin señal
+      - no hay internet
+      - se va la luz
+      - muy lejos
+      - vereda
+      - no llega
+      - caro el dato
+    description: >
+      Limitaciones físicas de infraestructura que obligan a rutas offline.
