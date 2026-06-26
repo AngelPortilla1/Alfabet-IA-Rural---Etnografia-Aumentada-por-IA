@@ -400,9 +400,9 @@ export default function P_ChatEtnografico() {
           
           {/* Formulario de Inicio si no está activo */}
           {!isSessionActive ? (
-            <div className="flex-1 flex flex-col items-center justify-center p-8 max-w-md mx-auto text-center space-y-6">
-              <div className="w-16 h-16 rounded-3xl bg-primary-container text-on-primary flex items-center justify-center shadow-inner">
-                <span className="material-symbols-outlined text-4xl" style={{ fontVariationSettings: "'FILL' 1" }}>chat</span>
+            <div className="flex-1 flex flex-col items-center justify-center p-4 md:p-8 max-w-md mx-auto text-center space-y-4 md:space-y-6 overflow-y-auto w-full">
+              <div className="w-12 h-12 md:w-16 md:h-16 rounded-3xl bg-primary-container text-on-primary flex items-center justify-center shadow-inner shrink-0">
+                <span className="material-symbols-outlined text-3xl md:text-4xl" style={{ fontVariationSettings: "'FILL' 1" }}>chat</span>
               </div>
               <div>
                 <h2 className="font-bold text-xl text-on-surface">Iniciar Diálogo Etnográfico</h2>
