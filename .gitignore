@@ -37,40 +37,41 @@ credentials.json
 # 3. COMPONENTE BACKEND (FastAPI / Python)
 # ------------------------------------------------------------------------------
 # Entornos virtuales
-backend/venv/
-backend/.venv/
-backend/env/
-backend/ENV/
+Arquitectura-Multiagente-AlfabetIA/venv/
+Arquitectura-Multiagente-AlfabetIA/.venv/
+Arquitectura-Multiagente-AlfabetIA/env/
+Arquitectura-Multiagente-AlfabetIA/ENV/
 
 # Caché y compilados de Python
 **/__pycache__/
 *.pyc
 *.pyo
 *.pyd
-backend/.pytest_cache/
-backend/.mypy_cache/
-backend/.ruff_cache/
+Arquitectura-Multiagente-AlfabetIA/.pytest_cache/
+Arquitectura-Multiagente-AlfabetIA/.mypy_cache/
+Arquitectura-Multiagente-AlfabetIA/.ruff_cache/
 
 # Bases de datos locales y almacenamiento de vectores (si aplica)
-backend/*.sqlite3
-backend/*.db
-backend/.chroma/
+runtime/
+Arquitectura-Multiagente-AlfabetIA/*.sqlite3
+Arquitectura-Multiagente-AlfabetIA/*.db
+Arquitectura-Multiagente-AlfabetIA/.chroma/
 
 # ------------------------------------------------------------------------------
 # 4. COMPONENTE FRONTEND (Vite / Node.js)
 # ------------------------------------------------------------------------------
 # Dependencias de Node
-frontend/node_modules/
+fronted-alfabetia/node_modules/
 **/node_modules/
 
 # Carpetas de producción creadas por Vite (Build)
-frontend/dist/
-frontend/out-tsc/
+fronted-alfabetia/dist/
+fronted-alfabetia/out-tsc/
 
 # Caché de empaquetadores y herramientas de Frontend
-frontend/.npm/
-frontend/.vite/
-frontend/.eslintcache
+fronted-alfabetia/.npm/
+fronted-alfabetia/.vite/
+fronted-alfabetia/.eslintcache
 
 *chat_thick_results.json
 *event_thick_results.json

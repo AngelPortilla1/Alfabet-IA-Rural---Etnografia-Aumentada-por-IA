@@ -22,10 +22,16 @@ app = FastAPI(
     swagger_ui_parameters={"syntaxHighlight": False}
 )
 
-origins = [
-    "http://localhost:5173",
-    "http://127.0.0.1:5173",
-]
+import os
+
+origins_env = os.environ.get("ALFABETIA_CORS_ORIGINS")
+if origins_env:
+    origins = [orig.strip() for orig in origins_env.split(",") if orig.strip()]
+else:
+    origins = [
+        "http://localhost:5173",
+        "http://127.0.0.1:5173",
+    ]
 
 app.add_middleware(
     CORSMiddleware,

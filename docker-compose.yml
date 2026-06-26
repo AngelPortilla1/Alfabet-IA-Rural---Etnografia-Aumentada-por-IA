@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./Arquitectura-Multiagente-AlfabetIA
+      dockerfile: Dockerfile
+    container_name: alfabetia-backend
+    restart: always
+    ports:
+      - "8000:8000"
+    environment:
+      # Las variables se pueden cargar desde el archivo .env o definirlas aquí
+      - alfabetia_DB_PATH=/app/runtime/alfabetia_rural.db
+      - alfabetia_LLM_PROVIDER=${ALFABETIA_LLM_PROVIDER:-ollama}
+      - alfabetia_OLLAMA_MODEL=${ALFABETIA_OLLAMA_MODEL:-qwen3:4b}
+      # Por defecto apuntamos al host de docker en puerto 11434 (Ollama)
+      - alfabetia_OLLAMA_BASE_URL=${ALFABETIA_OLLAMA_BASE_URL:-http://host.docker.internal:11434}
+      
+      # Variables para proveedores externos (OpenAI / DeepSeek)
+      - alfabetia_OPENAI_API_KEY=${ALFABETIA_OPENAI_API_KEY:-}
+      - alfabetia_OPENAI_BASE_URL=${ALFABETIA_OPENAI_BASE_URL:-}
+      - alfabetia_OPENAI_MODEL=${ALFABETIA_OPENAI_MODEL:-}
+
+      - ALFABETIA_CORS_ORIGINS=${ALFABETIA_CORS_ORIGINS:-*}
+    volumes:
+      - ./runtime:/app/runtime
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  frontend:
+    build:
+      context: ./fronted-alfabetia
+      dockerfile: Dockerfile
+    container_name: alfabetia-frontend
+    restart: always
+    ports:
+      - "80:80"
+    environment:
+      # Puedes definir una URL externa si no usas el reverse proxy directo en el frontend
+      - VITE_API_URL=${VITE_API_URL:-http://localhost:8000}
+    depends_on:
+      - backend

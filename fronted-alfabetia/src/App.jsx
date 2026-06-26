@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Layout from './components/Layout';
+import Layout from './components/layout';
 import P0_Home from './pages/P0_Home';
 import P1_RegistrarRelato from './pages/P1_RegistrarRelato';
 import P2_ModeloMental from './pages/P2_ModeloMental';
