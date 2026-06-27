@@ -468,25 +468,25 @@ export default function P2_ModeloMental() {
   const { values, literacy, uncertainty_sources, evidence_refs, contradiction_flags, confidence, revision } = rawData;
 
   return (
-    <div className="max-w-[1400px] mx-auto py-6 px-4 flex flex-col h-[calc(100vh-80px)] gap-4">
+    <div className="max-w-[1400px] mx-auto py-6 px-4 flex flex-col min-h-screen md:h-[calc(100vh-80px)] md:min-h-0 gap-4">
 
       {/* Header */}
       <div className="flex items-center gap-4 shrink-0 bg-surface/60 backdrop-blur-md p-4 rounded-3xl border border-outline-variant/30 shadow-sm">
         <button 
           onClick={() => navigate('/')} 
-          className="bg-surface-container hover:bg-primary-fixed/50 text-on-surface-variant hover:text-primary w-12 h-12 rounded-full flex items-center justify-center transition-colors border border-outline-variant/30"
+          className="bg-surface-container hover:bg-primary-fixed/50 text-on-surface-variant hover:text-primary w-12 h-12 rounded-full flex items-center justify-center transition-colors border border-outline-variant/30 shrink-0"
         >
           <span className="material-symbols-outlined text-xl">arrow_back</span>
         </button>
-        <div className="flex-1">
-          <h1 className="m-0 text-3xl font-display-lg font-bold text-on-surface">Modelo Mental BDI</h1>
-          <p className="m-0 text-sm font-bold text-on-surface-variant flex items-center gap-2 mt-1">
-            Visualización Cognitiva <span className="text-outline-variant">•</span> PID: 
+        <div className="flex-1 min-w-0">
+          <h1 className="m-0 text-xl md:text-3xl font-display-lg font-bold text-on-surface truncate">Modelo Mental BDI</h1>
+          <p className="m-0 text-xs md:text-sm font-bold text-on-surface-variant flex items-center gap-1 md:gap-2 mt-1 flex-wrap">
+            Visualización Cognitiva <span className="text-outline-variant hidden md:inline">•</span> PID: 
             <code className="font-mono bg-primary-container/30 text-primary px-2 py-0.5 rounded-md border border-primary/20">{pid}</code>
           </p>
         </div>
         {hasInferred && (
-          <div className="bg-tertiary-fixed border border-tertiary/20 text-on-tertiary-fixed px-4 py-2 rounded-full text-xs font-bold flex items-center gap-2 uppercase tracking-wider shadow-sm">
+          <div className="hidden md:flex bg-tertiary-fixed border border-tertiary/20 text-on-tertiary-fixed px-4 py-2 rounded-full text-xs font-bold items-center gap-2 uppercase tracking-wider shadow-sm">
             <span className="material-symbols-outlined text-[18px]">psychology</span>
             Enriquecido por LLM
           </div>
@@ -495,15 +495,15 @@ export default function P2_ModeloMental() {
 
       {/* Filtros */}
       <div className="flex items-center gap-4 flex-wrap shrink-0 bg-surface-container-lowest p-3 rounded-2xl border border-outline-variant/30 shadow-sm">
-        <span className="text-xs font-bold text-secondary uppercase tracking-widest ml-3 flex items-center gap-1.5">
+        <span className="text-xs font-bold text-secondary uppercase tracking-widest ml-1 md:ml-3 flex items-center gap-1.5">
           <span className="material-symbols-outlined text-[16px]">filter_alt</span>
           Filtros:
         </span>
         <FilterBar kinds={allKinds} active={activeKinds} onToggle={toggleKind} />
         {hasInferred && (
-          <label className="flex items-center gap-2 text-xs font-bold text-on-surface-variant cursor-pointer ml-auto mr-4 hover:text-tertiary transition-colors bg-surface-container px-3 py-1.5 rounded-full border border-outline-variant/30">
+          <label className="flex items-center gap-2 text-xs font-bold text-on-surface-variant cursor-pointer ml-auto mr-2 md:mr-4 hover:text-tertiary transition-colors bg-surface-container px-3 py-1.5 rounded-full border border-outline-variant/30">
             <input type="checkbox" checked={showInferred} onChange={e => setShowInferred(e.target.checked)} className="accent-tertiary w-4 h-4 cursor-pointer" />
-            Mostrar inferencias LLM
+            Mostrar inferencias
           </label>
         )}
       </div>
@@ -512,8 +512,15 @@ export default function P2_ModeloMental() {
       <div className="flex-1 flex flex-col md:flex-row gap-4 min-h-0">
 
         {/* ── Sidebar izquierdo: Relato + Lectura del sistema ── */}
-        <div className={`shrink-0 transition-all duration-300 ${leftOpen ? 'w-full md:w-[300px]' : 'md:w-10'} flex flex-col`}>
+        <div className={`shrink-0 transition-all duration-300 ${leftOpen ? 'w-full md:w-[300px]' : 'w-full md:w-10'} flex flex-col`}>
           {/* Toggle */}
+          <button
+            onClick={() => setLeftOpen(v => !v)}
+            className="flex md:hidden items-center justify-center self-center mb-2 px-4 py-1.5 rounded-full bg-surface-container border border-outline-variant/30 hover:bg-primary-fixed/50 text-on-surface-variant text-xs font-bold uppercase tracking-wider transition-colors"
+          >
+            {leftOpen ? 'Ocultar Panel de Relato' : 'Mostrar Panel de Relato'}
+          </button>
+          
           <button
             onClick={() => setLeftOpen(v => !v)}
             className="hidden md:flex items-center justify-center self-end mb-2 w-8 h-8 rounded-full bg-surface-container border border-outline-variant/30 hover:bg-primary-fixed/50 text-on-surface-variant hover:text-primary transition-colors"
@@ -523,7 +530,7 @@ export default function P2_ModeloMental() {
           </button>
 
           {leftOpen && (
-            <div className="flex-1 flex flex-col rounded-[28px] border border-outline-variant/40 bg-surface-container-lowest/90 backdrop-blur-md overflow-hidden shadow-md min-h-0">
+            <div className="flex-1 flex flex-col rounded-[28px] border border-outline-variant/40 bg-surface-container-lowest/90 backdrop-blur-md overflow-hidden shadow-md min-h-[300px] md:min-h-0">
               {/* Tabs */}
               <div className="flex border-b border-outline-variant/30">
                 {[['relato','article','Relato'],['tupla','functions','Mᵢ']].map(([tab, icon, label]) => (
@@ -579,12 +586,12 @@ export default function P2_ModeloMental() {
         {/* ── Canvas grafo ── */}
         <div
           ref={containerRef}
-          className="flex-1 rounded-[32px] border border-outline-variant/40 bg-surface/80 backdrop-blur-md overflow-hidden relative cursor-grab active:cursor-grabbing shadow-md"
+          className="flex-1 min-h-[450px] md:min-h-0 rounded-[32px] border border-outline-variant/40 bg-surface/80 backdrop-blur-md overflow-hidden relative cursor-grab active:cursor-grabbing shadow-md"
         >
           {/* Instrucciones flotantes (Onboarding) */}
-          <div className="absolute top-6 left-1/2 -translate-x-1/2 bg-surface-container-high/80 backdrop-blur border border-outline-variant/30 px-4 py-2 rounded-full text-[11px] font-bold text-on-surface-variant flex items-center gap-2 z-10 pointer-events-none shadow-sm animate-in fade-in slide-in-from-top-4 duration-1000">
+          <div className="absolute top-6 left-1/2 -translate-x-1/2 w-max max-w-[90%] bg-surface-container-high/80 backdrop-blur border border-outline-variant/30 px-4 py-2 rounded-full text-[11px] font-bold text-on-surface-variant flex items-center gap-2 z-10 pointer-events-none shadow-sm animate-in fade-in slide-in-from-top-4 duration-1000">
             <span className="material-symbols-outlined text-[16px] animate-pulse">touch_app</span>
-            Arrastra el lienzo o haz clic en los nodos para explorar
+            Arrastra o haz clic para explorar
           </div>
           {loading ? (
             <div className="absolute inset-0 flex items-center justify-center bg-surface/50 backdrop-blur-sm z-10">
@@ -630,13 +637,13 @@ export default function P2_ModeloMental() {
           )}
 
           {/* Leyenda flotante */}
-          <div className="absolute bottom-6 left-6">
+          <div className="absolute bottom-6 left-6 hidden md:block">
             <Legend kinds={allKinds} />
           </div>
         </div>
 
         {/* Panel lateral */}
-        <div className="w-full md:w-[340px] shrink-0 border border-outline-variant/40 rounded-[32px] bg-surface-container-lowest/90 backdrop-blur-md p-6 flex flex-col overflow-y-auto shadow-md">
+        <div className="w-full md:w-[340px] min-h-[300px] md:min-h-0 shrink-0 border border-outline-variant/40 rounded-[32px] bg-surface-container-lowest/90 backdrop-blur-md p-6 flex flex-col overflow-y-auto shadow-md">
           <h3 className="text-sm font-bold text-secondary uppercase tracking-widest mb-6 flex items-center gap-2 border-b border-outline-variant/30 pb-4">
              <span className="material-symbols-outlined">analytics</span>
              Explorador de Nodo
