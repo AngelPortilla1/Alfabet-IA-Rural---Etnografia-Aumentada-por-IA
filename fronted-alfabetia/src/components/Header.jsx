@@ -49,7 +49,7 @@ export default function Header() {
           <div className="flex items-center justify-start gap-3 lg:gap-5 flex-1 min-w-0">
             <button
               onClick={() => setMenuOpen(true)}
-              className="w-10 h-10 flex-shrink-0 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:bg-primary-container hover:text-primary transition-colors border border-outline-variant/30"
+              className="w-10 h-10 flex-shrink-0 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:bg-primary/10 hover:text-primary transition-colors border border-outline-variant/30"
             >
               <span className="material-symbols-outlined">menu</span>
             </button>
